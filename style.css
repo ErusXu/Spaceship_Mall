@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Orbitron', monospace;
+    background: linear-gradient(135deg, #0a0f1e 0%, #0c1225 100%);
+    color: #e0e0e0;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem 1rem;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid #2c3e50;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    background: linear-gradient(135deg, #88ccff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+header p {
+    color: #aaa;
+    margin-top: 0.5rem;
+}
+
+/* 상품 카드 그리드 */
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(20, 30, 45, 0.7);
+    backdrop-filter: blur(4px);
+    border-radius: 24px;
+    padding: 1rem;
+    width: 220px;
+    text-align: center;
+    border: 1px solid rgba(100, 150, 200, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-color: #4c9aff;
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 16px;
+    background: #1a1f2e;
+}
+
+.card h3 {
+    margin: 0.8rem 0 0.4rem;
+    font-size: 1.2rem;
+}
+
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ffaa44;
+    margin: 0.3rem 0;
+}
+
+.desc {
+    font-size: 0.75rem;
+    color: #bbb;
+    margin-bottom: 0.8rem;
+}
+
+.view-btn {
+    background: #1e2a3a;
+    border: 1px solid #4c9aff;
+    color: #88ccff;
+    padding: 0.5rem 1rem;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.view-btn:hover {
+    background: #4c9aff;
+    color: white;
+}
+
+/* 3D 뷰어 영역 */
+.viewer-container {
+    background: #05070f;
+    margin: 1rem 2rem 2rem;
+    border-radius: 32px;
+    overflow: hidden;
+    border: 1px solid #2c3e50;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.viewer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0,0,0,0.6);
+    border-bottom: 1px solid #2c3e50;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#current-ship-name {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.interaction-buttons button {
+    background: #1e2a3a;
+    border: none;
+    color: white;
+    padding: 0.4rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.interaction-buttons button:hover {
+    background: #4c9aff;
+    transform: scale(1.02);
+}
+
+#canvas-container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    background: #000000;
+}
+
+.cart-area {
+    text-align: center;
+    padding: 1rem;
+    background: rgba(0,0,0,0.5);
+    border-top: 1px solid #2c3e50;
+}
+
+#cart-btn {
+    background: #ff8844;
+    border: none;
+    padding: 0.7rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#cart-btn:hover {
+    background: #ffaa66;
+    transform: scale(1.02);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid #1e2a3a;
+    margin-top: 1rem;
+}
+
+/* 반응형 */
+@media (max-width: 800px) {
+    .product-list { padding: 1rem; gap: 1rem; }
+    .card { width: 180px; }
+    .viewer-header { flex-direction: column; align-items: flex-start; }
+    #canvas-container { height: 350px; }
+}
