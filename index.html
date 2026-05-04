@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>스타쉽 마켓 | 3D 우주선 쇼핑몰</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Import Map for Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🚀 STARSHIP MARKET</h1>
+        <p>당신의 우주선을 선택하세요. 3D로 직접 확인해보세요.</p>
+    </header>
+
+    <main>
+        <!-- 상품 카드 리스트 -->
+        <section class="product-list">
+            <div class="card" data-model="starlinger">
+                <img src="thumbnails/ship1_thumb.jpg" alt="스타라이너">
+                <h3>스타라이너 MK-II</h3>
+                <p class="price">₩250억</p>
+                <p class="desc">성간 순항에 최적화, 럭셔리 인테리어</p>
+                <button class="view-btn">🔍 3D로 보기</button>
+            </div>
+            <div class="card" data-model="phantomX1">
+                <img src="thumbnails/ship2_thumb.jpg" alt="팬텀 X1">
+                <h3>팬텀 X1</h3>
+                <p class="price">₩180억</p>
+                <p class="desc">스텔스 기술, 빠른 기동성</p>
+                <button class="view-btn">🔍 3D로 보기</button>
+            </div>
+            <div class="card" data-model="nebulah">
+                <img src="thumbnails/ship3_thumb.jpg" alt="네뷸라 호">
+                <h3>네뷸라 호</h3>
+                <p class="price">₩320억</p>
+                <p class="desc">탐사선, 긴 항속 거리</p>
+                <button class="view-btn">🔍 3D로 보기</button>
+            </div>
+            <div class="card" data-model="chronos">
+                <img src="thumbnails/ship4_thumb.jpg" alt="크로노스 RV">
+                <h3>크로노스 RV</h3>
+                <p class="price">₩99억</p>
+                <p class="desc">합리적 가격, 입문용 우주선</p>
+                <button class="view-btn">🔍 3D로 보기</button>
+            </div>
+        </section>
+
+        <!-- 3D 뷰어 영역 -->
+        <section class="viewer-container">
+            <div class="viewer-header">
+                <h2 id="current-ship-name">우주선을 선택하세요</h2>
+                <div class="interaction-buttons">
+                    <button id="color-red">🔴 레드</button>
+                    <button id="color-blue">🔵 블루</button>
+                    <button id="color-silver">⚪ 실버</button>
+                    <button id="reset-view">🔄 뷰 초기화</button>
+                </div>
+            </div>
+            <div id="canvas-container"></div>
+            <div class="cart-area">
+                <button id="cart-btn">🛒 장바구니 담기 (데모)</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Starship Market | 실제 결제 기능 없음, 3D 데모 목적</p>
+    </footer>
+</body>
+</html>
